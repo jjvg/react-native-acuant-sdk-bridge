@@ -4,10 +4,15 @@ import { StyleSheet, View, Text } from 'react-native';
 import AcuantSdkBridge from 'react-native-acuant-sdk-bridge';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState("");
 
   React.useEffect(() => {
-    AcuantSdkBridge.multiply(3, 7).then(setResult);
+    async function acuantCall() {
+         const result = await AcuantSdkBridge.callAcuant()
+        console.log(result)
+        setResult(result)
+    }
+    acuantCall()
   }, []);
 
   return (
