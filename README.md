@@ -15,7 +15,7 @@ import AcuantSdkBridge from "react-native-acuant-sdk-bridge";
 
 // ...
 
-const result = await AcuantSdkBridge.multiply(3, 7);
+const result = await AcuantSdkBridge.callAcuant();
 ```
 
 ## Contributing
